@@ -61,10 +61,11 @@ button {
     width: 100%;
     padding: 10px 30px;
     cursor: pointer;
+    background-color: #fce300;
 }
 
 button:hover {
-    background: #fce300;
+    background: #ff5e01;
 }
 
 .content {
