@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo"><img src="logo.jpeg" alt="" width="50" height="50"></div>
+
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Our Profile</a></li>
+            <li><a href="#">Achievement</a></li>
+            <li><a href="#msg">Message Us</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content-1">
+        <h1>Hi <span id="nama"></span>, Welcome To Website</h1>
+        <p>Ini adalah tugas Website pertama Revou</p>
+        <div>
+            <img src="https://source.unsplash.com/1366x578?landscape&sig=1" class="img-slideshow">
+            <img src="https://source.unsplash.com/1366x578?landscape&sig=2" class="img-slideshow">
+            <img src="https://source.unsplash.com/1366x578?landscape&sig=3" class="img-slideshow">
+            <img src="https://source.unsplash.com/1366x578?landscape&sig=4" class="img-slideshow">
+            <img src="https://source.unsplash.com/1366x578?landscape&sig=5" class="img-slideshow">
+        </div>
+    </main>
+
+    <main class="main-content-2">
+        <h1>Our Facilitation</h1>
+        <main>
+            <div class="content">
+                <div class="lingkaran"></div>
+                <h3>Professional Teacher</h3>
+            </div>
+            <div class="content">
+                <div class="lingkaran"></div>
+                <h3>Sport Field</h3>
+            </div>
+            <div class="content">
+                <div class="lingkaran"></div>
+                <h3>Classroom</h3>
+            </div>
+        </main>
+    </main>
+
+    <main class="main-content-3">
+        <h1 id="msg">Message Us</h1><br>
+        <div class="isi-3">
+            <main>
+                <form name="message-form" onsubmit="return validasiForm()">
+                    <table class="tb-form">
+                        <tr>
+                            <td><label for="namaa">Nama</label></td>
+                            <td>:</td>
+                            <td><input type="text" name="namaa" id="namaa" placeholder="Nama"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="tgl">Tanggal Lahir</label></td>
+                            <td>:</td>
+                            <td><input type="date" name="tgl" id="tgl"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Jenis Kelamin</label></td>
+                            <td>:</td>
+                            <td>
+                                <input type="radio" name="jenis" id="lk" value="Laki-laki">
+                                <label for="lk">Laki-laki</label>
+                                <input type="radio" name="jenis" id="pr" value="Perempuan">
+                                <label for="pr">Perempuan</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="pesan">Pesan</label></td>
+                            <td>:</td>
+                            <td><textarea name="pesan" id="pesan" placeholder="Pesan"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <button type="submit" name="submit" id="submit" class="button">
+                                    Submit
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </main>
+            <main>
+                <div class="kotak">
+                    <table class="tb-msg">
+                        <tr>
+                            <th>Current Time</th>
+                            <td>:</td>
+                            <td><span id="output-time"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Nama</th>
+                            <td>:</td>
+                            <td><span id="output-nama"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Tanggal Lahir</th>
+                            <td>:</td>
+                            <td><span id="output-tgl"></span></td>
+
+                        </tr>
+                        <tr>
+                            <th>Jenis Kelamin</th>
+                            <td>:</td>
+                            <td><span id="output-jenis"></span></td>
+                        </tr>
+                        <tr>
+                            <th>Pesan</th>
+                            <td>:</td>
+                            <td><span id="output-pesan"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </main>
+
+    <footer>
+        <h4>Created By Revou & Zulfan</h4>
+    </footer>
+
+    <script>
+        var name = prompt('Masukan nama kamu');
+        document.getElementById("nama").innerText = name;
+
+        const tanggal = new Date();
+        console.log(tanggal);
+        document.getElementById("output-time").innerHTML = tanggal;
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs((slideIndex += n));
+        }
+
+        function showDivs(n) {
+            var i;
+            var imgList = document.getElementsByClassName("img-slideshow");
+            if (n > imgList.length) {
+                slideIndex = 1;
+            } else if (n < 1) {
+                slideIndex = imgList.length;
+            }
+
+            for (i = 0; i < imgList.length; i++) {
+                imgList[i].style.display = "none";
+            }
+
+            imgList[slideIndex - 1].style.display = "block";
+        }
+
+        setInterval(() => {
+            plusDivs(1);
+        }, 2000);
+
+        function validasiForm() {
+            var name = document.forms["message-form"]["namaa"].value;
+            var tgl = document.forms["message-form"]["tgl"].value;
+            var jenis = document.forms["message-form"]["jenis"].value;
+            var pesan = document.forms["message-form"]["pesan"].value;
+
+            if (name == "" || tgl == "" || jenis == "" || pesan == "") {
+                alert("Input tidak boleh kosong");
+                return false;
+            }
+
+            document.getElementById("output-nama").innerText = name;
+            document.getElementById("output-tgl").innerText = tgl;
+            document.getElementById("output-jenis").innerText = jenis;
+            document.getElementById("output-pesan").innerText = pesan;
+            return false;
+        }
+    </script>
+</body>
+
+</html>

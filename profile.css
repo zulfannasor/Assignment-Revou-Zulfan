@@ -1,0 +1,42 @@
+.logo {
+    margin: 0;
+}
+
+.navbar {
+    padding: 0 50px;
+    border-bottom: 3px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+}
+
+.nav a {
+    display: block;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav a {
+    border: 1px solid;
+    font-size: 14sp;
+    display: block;
+    padding: 10px;
+    color: #000;
+}
+
+.nav a:hover {
+    background: #fce300;
+}
+
+footer {
+    padding: 15px 35px;
+    text-align: right;
+}

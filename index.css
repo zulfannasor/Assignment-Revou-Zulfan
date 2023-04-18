@@ -1,0 +1,124 @@
+.navbar,
+.main-content-1,
+.main-content-2,
+.main-content-3 {
+    padding: 0 100px 50px;
+    border-bottom: 2px solid;
+}
+
+.main-content-1>div>img {
+    margin: auto;
+}
+
+.main-content-2>main {
+    display: flex;
+}
+
+.isi-3 {
+    flex-direction: row;
+    display: flex;
+}
+
+.isi-3>main {
+    display: flex;
+    flex: 1;
+    justify-content: left;
+    align-content: center;
+}
+
+.tb-msg,
+.tb-form {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+.kotak {
+    padding-top: 5%;
+    height: 200px;
+    border: 2px solid black;
+}
+
+input[type=text],
+input[type=date],
+textarea {
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px 10px;
+}
+
+textarea {
+    resize: none;
+    height: 60px;
+}
+
+button {
+    font-weight: bold;
+    border: 1px solid black;
+    width: 100%;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #fce300;
+}
+
+.content {
+    padding: 0 100px;
+    text-align: center;
+}
+
+.lingkaran {
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    border: 1px solid;
+    border-radius: 100%;
+}
+
+.logo {
+    margin: 0;
+}
+
+.navbar {
+    padding: 0 50px;
+    border-bottom: 3px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+}
+
+.nav a {
+    display: block;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav a {
+    border: 1px solid;
+    font-size: 14sp;
+    display: block;
+    padding: 10px;
+    color: #000;
+}
+
+.nav a:hover {
+    background: #fce300;
+}
+
+footer {
+    padding: 15px 35px;
+    text-align: right;
+}
